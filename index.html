@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA Adventure Club — Paddle. Hike. Explore Los Angeles.</title>
+  <meta name="description" content="LA Adventure Club is a community for outdoor adventures around Los Angeles — paddle boarding, hiking, and island weekends. See past trips, register for the next one, and meet the crew." />
+  <meta name="theme-color" content="#0a2230" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LA Adventure Club" />
+  <meta property="og:description" content="Outdoor adventures around Los Angeles — paddle boarding, hiking, and island weekends. Come explore with us." />
+  <meta property="og:image" content="assets/img/naples-hero.jpg" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#home" aria-label="LA Adventure Club home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28"><path d="M3 24l7-12 5 8 3-5 6 9z" fill="currentColor"/><circle cx="24" cy="8" r="3.2" fill="currentColor"/></svg>
+        </span>
+        <span class="brand__text">LA Adventure<span class="brand__text--accent"> Club</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#adventures">Past Adventures</a>
+        <a href="#join">Join a Trip</a>
+        <a href="#about">About</a>
+        <a class="btn btn--sm btn--solid" href="#register">Register</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero__media">
+        <img src="assets/img/catalina-hero.jpg" alt="Coastline view over Avalon harbor on Catalina Island" />
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light">Los Angeles · Outdoors · Good people</p>
+        <h1>Get outside.<br />Explore L.A. together.</h1>
+        <p class="hero__sub">We're a no-pressure crew that paddles the coast, hikes the canyons, and chases sunsets all over Southern California. No experience required — just show up.</p>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="#register">Register for a trip</a>
+          <a class="btn btn--ghost" href="#adventures">Watch past adventures</a>
+        </div>
+        <ul class="hero__stats" aria-label="Club highlights">
+          <li><strong>3</strong><span>Recent trips</span></li>
+          <li><strong>2</strong><span>Coastlines paddled</span></li>
+          <li><strong>All</strong><span>Levels welcome</span></li>
+        </ul>
+      </div>
+      <a href="#adventures" class="hero__scroll" aria-label="Scroll to adventures">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===== PAST ADVENTURES ===== -->
+    <section class="section" id="adventures">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Past Adventures</p>
+          <h2>Where we've been lately</h2>
+          <p class="section__lead">Every trip gets filmed and cut into a short highlight reel. Hit play and come along.</p>
+        </header>
+
+        <div class="events">
+          <!-- Catalina -->
+          <article class="event">
+            <div class="event__video">
+              <video controls preload="none" playsinline poster="assets/img/catalina-hero.jpg">
+                <source src="assets/video/catalina-paddle-island.mp4" type="video/mp4" />
+                Your browser doesn't support embedded video.
+              </video>
+            </div>
+            <div class="event__body">
+              <div class="event__meta">
+                <span class="chip chip--water">Paddle Boarding</span>
+                <span class="event__date">Jun 6–7, 2026</span>
+              </div>
+              <h3>Catalina Island Weekend</h3>
+              <p class="event__loc">📍 Avalon · Santa Catalina Island</p>
+              <p>A full weekend on the island — stand-up paddling glassy coves, wandering Avalon's golf-cart streets, scrambling the rocky shoreline, and a long sunset paddle to close it out.</p>
+              <div class="event__gallery">
+                <button class="thumb" data-full="assets/img/catalina-1.jpg"><img src="assets/img/catalina-1.jpg" alt="Rocky Catalina shoreline path with the ocean below" loading="lazy" /></button>
+                <button class="thumb" data-full="assets/img/catalina-2.jpg"><img src="assets/img/catalina-2.jpg" alt="Boats moored in Avalon harbor" loading="lazy" /></button>
+                <button class="thumb" data-full="assets/img/catalina-3.jpg"><img src="assets/img/catalina-3.jpg" alt="Sunset paddle on calm water off Catalina" loading="lazy" /></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hike -->
+          <article class="event">
+            <div class="event__video">
+              <video controls preload="none" playsinline poster="assets/img/hike-hero.jpg">
+                <source src="assets/video/dawn-mine-sunset-loop.mp4" type="video/mp4" />
+                Your browser doesn't support embedded video.
+              </video>
+            </div>
+            <div class="event__body">
+              <div class="event__meta">
+                <span class="chip chip--trail">Hiking</span>
+                <span class="event__date">Jun 2026</span>
+              </div>
+              <h3>Dawn Mine &amp; Sunset Trail Loop</h3>
+              <p class="event__loc">📍 San Gabriel Mountains · Altadena</p>
+              <p>A backcountry loop above Pasadena — shaded switchbacks, a boulder-strewn creek bed at the old Dawn Mine, and ridge-top views straight across the hazy L.A. basin.</p>
+              <div class="event__gallery">
+                <button class="thumb" data-full="assets/img/hike-hero.jpg"><img src="assets/img/hike-hero.jpg" alt="Canyon panorama in the San Gabriel Mountains" loading="lazy" /></button>
+                <button class="thumb" data-full="assets/img/hike-2.jpg"><img src="assets/img/hike-2.jpg" alt="Boulders in the creek bed at Dawn Mine" loading="lazy" /></button>
+                <button class="thumb" data-full="assets/img/hike-1.jpg"><img src="assets/img/hike-1.jpg" alt="Ridge trail with mountains in the distance" loading="lazy" /></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Naples -->
+          <article class="event">
+            <div class="event__video">
+              <video controls preload="none" playsinline poster="assets/img/naples-hero.jpg">
+                <source src="assets/video/naples-paddle-boarding.mp4" type="video/mp4" />
+                Your browser doesn't support embedded video.
+              </video>
+            </div>
+            <div class="event__body">
+              <div class="event__meta">
+                <span class="chip chip--water">Paddle Boarding</span>
+                <span class="event__date">Jun 13, 2026</span>
+              </div>
+              <h3>Naples Island Paddle</h3>
+              <p class="event__loc">📍 Naples Island · Long Beach</p>
+              <p>An easy-going cruise through the canals of Naples Island — gliding past waterfront homes and yachts, ducking under footbridges, and soaking up that golden-hour glitter on the water.</p>
+              <div class="event__gallery">
+                <button class="thumb" data-full="assets/img/naples-hero.jpg"><img src="assets/img/naples-hero.jpg" alt="Waterfront homes and a yacht on a Naples Island canal" loading="lazy" /></button>
+                <button class="thumb" data-full="assets/img/naples-1.jpg"><img src="assets/img/naples-1.jpg" alt="Canal lined with mansions and palm trees" loading="lazy" /></button>
+                <button class="thumb" data-full="assets/img/naples-2.jpg"><img src="assets/img/naples-2.jpg" alt="Sun glinting off the water while paddling" loading="lazy" /></button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== JOIN / UPCOMING ===== -->
+    <section class="section section--tint" id="join">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Upcoming Trips</p>
+          <h2>Come on the next one</h2>
+          <p class="section__lead">Pick a date below and register. Trips are free to join — you just cover your own gear and snacks. Beginners genuinely welcome.</p>
+        </header>
+
+        <div class="upcoming" id="upcomingList">
+          <!-- Cards are also defined here for no-JS users; script.js keeps the dropdown in sync -->
+          <article class="trip" data-trip="Solstice Canyon Sunset Hike — Sat, Jun 27">
+            <div class="trip__date"><span class="trip__mon">JUN</span><span class="trip__day">27</span></div>
+            <div class="trip__info">
+              <span class="chip chip--trail">Hiking · Easy</span>
+              <h3>Solstice Canyon Sunset Hike</h3>
+              <p>📍 Malibu · 3 mi loop, waterfall &amp; ocean views. Meet 4:30pm, stay for the sunset.</p>
+            </div>
+            <a class="btn btn--sm btn--solid trip__cta" href="#register" data-pick="Solstice Canyon Sunset Hike — Sat, Jun 27">Register</a>
+          </article>
+
+          <article class="trip" data-trip="Marina del Rey SUP & Picnic — Sat, Jul 11">
+            <div class="trip__date"><span class="trip__mon">JUL</span><span class="trip__day">11</span></div>
+            <div class="trip__info">
+              <span class="chip chip--water">Paddle · Beginner</span>
+              <h3>Marina del Rey SUP &amp; Picnic</h3>
+              <p>📍 Marina del Rey · Calm-water paddle followed by a picnic on the grass. Boards available to share.</p>
+            </div>
+            <a class="btn btn--sm btn--solid trip__cta" href="#register" data-pick="Marina del Rey SUP & Picnic — Sat, Jul 11">Register</a>
+          </article>
+
+          <article class="trip" data-trip="Griffith Observatory Night Hike — Sat, Jul 25">
+            <div class="trip__date"><span class="trip__mon">JUL</span><span class="trip__day">25</span></div>
+            <div class="trip__info">
+              <span class="chip chip--trail">Hiking · Moderate</span>
+              <h3>Griffith Observatory Night Hike</h3>
+              <p>📍 Griffith Park · Golden-hour climb to the Observatory, city lights on the way down.</p>
+            </div>
+            <a class="btn btn--sm btn--solid trip__cta" href="#register" data-pick="Griffith Observatory Night Hike — Sat, Jul 25">Register</a>
+          </article>
+        </div>
+
+        <!-- ===== REGISTRATION FORM ===== -->
+        <div class="register" id="register">
+          <div class="register__intro">
+            <h3>Reserve your spot</h3>
+            <p>Fill this out and the captain will email you the meet-up details, what to bring, and gear options. Spots are first-come — we keep groups small.</p>
+            <ul class="register__perks">
+              <li>✓ Free to join</li>
+              <li>✓ Loaner gear available</li>
+              <li>✓ All skill levels</li>
+            </ul>
+          </div>
+
+          <form class="form" id="registerForm" novalidate>
+            <div class="form__row">
+              <label class="field">
+                <span>Full name <i>*</i></span>
+                <input type="text" name="name" autocomplete="name" required placeholder="Your name" />
+              </label>
+              <label class="field">
+                <span>Email <i>*</i></span>
+                <input type="email" name="email" autocomplete="email" required placeholder="you@email.com" />
+              </label>
+            </div>
+
+            <div class="form__row">
+              <label class="field">
+                <span>Phone <small>(optional)</small></span>
+                <input type="tel" name="phone" autocomplete="tel" placeholder="(555) 123-4567" />
+              </label>
+              <label class="field">
+                <span>Which trip? <i>*</i></span>
+                <select name="trip" id="tripSelect" required>
+                  <option value="" disabled selected>Choose an adventure…</option>
+                  <!-- options injected by script.js, with this fallback -->
+                  <option>Solstice Canyon Sunset Hike — Sat, Jun 27</option>
+                  <option>Marina del Rey SUP &amp; Picnic — Sat, Jul 11</option>
+                  <option>Griffith Observatory Night Hike — Sat, Jul 25</option>
+                  <option>Not sure yet — add me to the list</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form__row">
+              <label class="field">
+                <span>Experience level</span>
+                <select name="experience">
+                  <option>First-timer</option>
+                  <option>Some experience</option>
+                  <option>Comfortable / experienced</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Guests joining you</span>
+                <select name="guests">
+                  <option value="0">Just me</option>
+                  <option value="1">+1</option>
+                  <option value="2">+2</option>
+                  <option value="3">+3 or more</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Anything we should know? <small>(optional)</small></span>
+              <textarea name="notes" rows="3" placeholder="Dietary needs, gear questions, who you're bringing…"></textarea>
+            </label>
+
+            <!-- honeypot for spam bots -->
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+
+            <label class="checkbox">
+              <input type="checkbox" name="waiver" required />
+              <span>I understand outdoor activities carry inherent risk and I'm joining at my own discretion. <i>*</i></span>
+            </label>
+
+            <button type="submit" class="btn btn--solid btn--block" id="submitBtn">Send my registration</button>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about__text">
+          <p class="eyebrow">About the Club</p>
+          <h2>Adventure is better with a crew.</h2>
+          <p>LA Adventure Club started with a simple idea: there's a whole coastline, mountain range, and set of canyons right here in our backyard — and it's a lot more fun to explore them with good people than alone.</p>
+          <p>We run casual, beginner-friendly trips a couple times a month: paddle boarding the harbors and canals, hiking the San Gabriels, and the occasional island weekend. No membership fees, no cliques, no pressure to be hardcore. Show up, get outside, make some friends, and we'll film it so you've got something to look back on.</p>
+          <div class="about__values">
+            <div><strong>🌊 Get outside</strong><span>Real trips, real places, every month.</span></div>
+            <div><strong>🤝 No gatekeeping</strong><span>All levels and all gear situations welcome.</span></div>
+            <div><strong>🎬 Capture it</strong><span>Every trip becomes a highlight reel.</span></div>
+          </div>
+        </div>
+
+        <aside class="captain">
+          <div class="captain__card">
+            <div class="captain__avatar" aria-hidden="true">JC</div>
+            <h3>Jared</h3>
+            <p class="captain__role">Founder &amp; Captain</p>
+            <p class="captain__bio">"I started this club because some of my best days have been on the water or up a trail with friends. I plan the routes, bring the spare paddle, and point the camera. Come say hi — your first trip is the hardest part, and after that you're crew."</p>
+            <a class="btn btn--sm btn--solid" href="#register">Adventure with us</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand brand--footer">
+          <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 32 32" width="24" height="24"><path d="M3 24l7-12 5 8 3-5 6 9z" fill="currentColor"/><circle cx="24" cy="8" r="3.2" fill="currentColor"/></svg></span>
+          <span class="brand__text">LA Adventure<span class="brand__text--accent"> Club</span></span>
+        </span>
+        <p>Outdoor adventures around Los Angeles. Paddle, hike, explore — together.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#adventures">Past Adventures</a>
+        <a href="#join">Upcoming Trips</a>
+        <a href="#register">Register</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="footer__contact">
+        <p>Questions? Email the captain:</p>
+        <a class="footer__email" href="mailto:jarrr23d@gmail.com">jarrr23d@gmail.com</a>
+      </div>
+    </div>
+    <div class="container footer__sub">
+      <p>© <span id="year">2026</span> LA Adventure Club. Made for the love of getting outside.</p>
+      <p class="footer__credits">Highlight-reel music: "Gymnopédie No. 1" by Kevin MacLeod (CC BY), "Tropical Dream" by Lele Rambelli (CC BY 3.0), "Cozy Corner Bossa" (CC0).</p>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
