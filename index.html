@@ -52,7 +52,7 @@
         <a href="#adventures"><span class="nav__idx">01</span> Adventures</a>
         <a href="#join"><span class="nav__idx">02</span> Join</a>
         <a href="#about"><span class="nav__idx">03</span> About</a>
-        <a class="btn btn--accent btn--sm" href="#register">Register <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--accent btn--sm" href="members.html">Register <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </nav>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <svg class="nav__toggle-open" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -81,7 +81,7 @@
         </h1>
         <p class="hero__sub">A no-pressure crew that paddles the coast, hikes the canyons, and chases sunsets all over Southern California. No experience required — just show up.</p>
         <div class="hero__cta">
-          <a class="btn btn--accent btn--lg" href="#register">Claim a spot <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--accent btn--lg" href="members.html">Claim a spot <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn--outline-light btn--lg" href="#adventures">Watch the reels</a>
         </div>
       </div>
@@ -216,7 +216,7 @@
               <h3>Solstice Canyon Sunset Hike</h3>
               <p class="trip__meta">Malibu · 3 mi loop, waterfall &amp; ocean views · meet 4:30pm</p>
             </div>
-            <a class="trip__cta" href="#register" data-pick="Solstice Canyon Sunset Hike — Sat, Jun 27" aria-label="Register for Solstice Canyon Sunset Hike">Register <svg aria-hidden="true"><use href="#i-upright"/></svg></a>
+            <a class="trip__cta" href="members.html?event=solstice-canyon-hike" aria-label="Register for Solstice Canyon Sunset Hike">Register <svg aria-hidden="true"><use href="#i-upright"/></svg></a>
           </article>
 
           <article class="trip reveal" data-trip="Marina del Rey SUP & Picnic — Sat, Jul 11">
@@ -226,7 +226,7 @@
               <h3>Marina del Rey SUP &amp; Picnic</h3>
               <p class="trip__meta">Marina del Rey · calm-water paddle + picnic · boards to share</p>
             </div>
-            <a class="trip__cta" href="#register" data-pick="Marina del Rey SUP & Picnic — Sat, Jul 11" aria-label="Register for Marina del Rey SUP and Picnic">Register <svg aria-hidden="true"><use href="#i-upright"/></svg></a>
+            <a class="trip__cta" href="members.html?event=marina-del-rey-sup" aria-label="Register for Marina del Rey SUP and Picnic">Register <svg aria-hidden="true"><use href="#i-upright"/></svg></a>
           </article>
 
           <article class="trip reveal" data-trip="Griffith Observatory Night Hike — Sat, Jul 25">
@@ -236,16 +236,16 @@
               <h3>Griffith Observatory Night Hike</h3>
               <p class="trip__meta">Griffith Park · golden-hour climb, city lights on the way down</p>
             </div>
-            <a class="trip__cta" href="#register" data-pick="Griffith Observatory Night Hike — Sat, Jul 25" aria-label="Register for Griffith Observatory Night Hike">Register <svg aria-hidden="true"><use href="#i-upright"/></svg></a>
+            <a class="trip__cta" href="members.html?event=griffith-night-hike" aria-label="Register for Griffith Observatory Night Hike">Register <svg aria-hidden="true"><use href="#i-upright"/></svg></a>
           </article>
         </div>
 
-        <!-- ===== REGISTRATION ===== -->
+        <!-- ===== REGISTRATION CTA → member portal ===== -->
         <div class="register" id="register">
           <div class="register__intro">
             <p class="kicker kicker--accent">Sign-up sheet</p>
             <h3>Reserve<br />your spot</h3>
-            <p>Fill this out and the captain emails you the meet-up details, what to bring, and gear options. Spots are first-come — we keep groups small.</p>
+            <p>Registration is members-only so we can plan trips and reach you. Sign in with Google, answer a couple of quick questions once, then book any upcoming trip in seconds.</p>
             <ul class="register__perks">
               <li><svg aria-hidden="true"><use href="#i-check"/></svg> Free to join</li>
               <li><svg aria-hidden="true"><use href="#i-check"/></svg> Loaner gear available</li>
@@ -253,70 +253,16 @@
             </ul>
           </div>
 
-          <form class="form" id="registerForm" novalidate>
-            <div class="form__row">
-              <label class="field">
-                <span>Full name <i>*</i></span>
-                <input type="text" name="name" autocomplete="name" required placeholder="Your name" />
-              </label>
-              <label class="field">
-                <span>Email <i>*</i></span>
-                <input type="email" name="email" autocomplete="email" required placeholder="you@email.com" />
-              </label>
-            </div>
-
-            <div class="form__row">
-              <label class="field">
-                <span>Phone <small>(optional)</small></span>
-                <input type="tel" name="phone" autocomplete="tel" placeholder="(555) 123-4567" />
-              </label>
-              <label class="field">
-                <span>Which trip? <i>*</i></span>
-                <select name="trip" id="tripSelect" required>
-                  <option value="" disabled selected>Choose an adventure…</option>
-                  <option>Solstice Canyon Sunset Hike — Sat, Jun 27</option>
-                  <option>Marina del Rey SUP &amp; Picnic — Sat, Jul 11</option>
-                  <option>Griffith Observatory Night Hike — Sat, Jul 25</option>
-                  <option>Not sure yet — add me to the list</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="form__row">
-              <label class="field">
-                <span>Experience level</span>
-                <select name="experience">
-                  <option>First-timer</option>
-                  <option>Some experience</option>
-                  <option>Comfortable / experienced</option>
-                </select>
-              </label>
-              <label class="field">
-                <span>Guests joining you</span>
-                <select name="guests">
-                  <option value="0">Just me</option>
-                  <option value="1">+1</option>
-                  <option value="2">+2</option>
-                  <option value="3">+3 or more</option>
-                </select>
-              </label>
-            </div>
-
-            <label class="field">
-              <span>Anything we should know? <small>(optional)</small></span>
-              <textarea name="notes" rows="3" placeholder="Dietary needs, gear questions, who you're bringing…"></textarea>
-            </label>
-
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
-
-            <label class="checkbox">
-              <input type="checkbox" name="waiver" required />
-              <span>I understand outdoor activities carry inherent risk and I'm joining at my own discretion. <i>*</i></span>
-            </label>
-
-            <button type="submit" class="btn btn--accent btn--block" id="submitBtn">Send my registration <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
-            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
-          </form>
+          <div class="register__cta">
+            <p class="kicker">How it works</p>
+            <ol class="howto">
+              <li><span>1</span> Sign in with Google</li>
+              <li><span>2</span> Quick profile — name, age, emergency contact</li>
+              <li><span>3</span> Pick your trips and you're in</li>
+            </ol>
+            <a class="btn btn--accent btn--block btn--lg" href="members.html">Go to member portal <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="register__fine">Your info is stored securely and used only for trip coordination.</p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Portal — LA Adventure Club</title>
+  <meta name="description" content="Sign in to register for upcoming LA Adventure Club trips." />
+  <meta name="theme-color" content="#10211f" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="members">
+  <a class="skip-link" href="#portal">Skip to content</a>
+
+  <!-- ===== SVG ICON SPRITE ===== -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol>
+      <symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav nav--solid" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="index.html" aria-label="LA Adventure Club home">
+        <svg class="brand__mark" aria-hidden="true"><use href="#i-compass"/></svg>
+        <span class="brand__text">LA Adventure Club</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="index.html"><svg aria-hidden="true"><use href="#i-back"/></svg> Back to site</a>
+        <button class="btn btn--sm btn--outline-ink hidden" id="signOutBtn" type="button">Sign out <svg aria-hidden="true"><use href="#i-logout"/></svg></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="portal" class="portal">
+    <!-- Loading -->
+    <section class="pstate" id="portalLoading">
+      <div class="container portal__center">
+        <p class="kicker"><span class="section__no">●</span> Loading</p>
+        <p>Checking your session…</p>
+      </div>
+    </section>
+
+    <!-- Not configured yet (no Supabase keys) -->
+    <section class="pstate hidden" id="portalNotConfigured">
+      <div class="container portal__narrow">
+        <p class="kicker kicker--accent">Setup needed</p>
+        <h1 class="portal__title">Almost there</h1>
+        <p>The member portal isn't connected to its database yet. Add your Supabase
+           URL and anon key in <code>config.js</code>, then run <code>schema.sql</code>
+           in Supabase. Full steps are in <code>SETUP-database.md</code>.</p>
+        <a class="btn btn--accent" href="index.html"><svg aria-hidden="true"><use href="#i-back"/></svg> Back to site</a>
+      </div>
+    </section>
+
+    <!-- Signed out -->
+    <section class="pstate hidden" id="portalSignedOut">
+      <div class="container portal__narrow portal__center">
+        <p class="kicker kicker--accent"><span class="section__no">01</span> Members</p>
+        <h1 class="portal__title">Join the<br />next trip</h1>
+        <p class="portal__lead">Sign in with Google to set up a quick profile and reserve your
+           spot on upcoming adventures. We use it only to contact you about trips.</p>
+        <button class="btn btn--google" id="googleSignIn" type="button">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="g-logo">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.76h3.56c2.08-1.92 3.28-4.74 3.28-8.09Z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.56-2.76c-.98.66-2.24 1.06-3.72 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23Z"/>
+            <path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84Z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38Z"/>
+          </svg>
+          Continue with Google
+        </button>
+        <p class="portal__fine">First time? We'll ask a couple of quick questions (name, age, emergency contact) right after.</p>
+      </div>
+    </section>
+
+    <!-- Profile questionnaire -->
+    <section class="pstate hidden" id="portalProfile">
+      <div class="container portal__narrow">
+        <p class="kicker kicker--accent"><span class="section__no">02</span> Quick profile</p>
+        <h1 class="portal__title">Tell us<br />about you</h1>
+        <p class="portal__lead">Just the basics so we can plan trips and reach you. You can edit this anytime.</p>
+
+        <form class="form portal__form" id="profileForm" novalidate>
+          <label class="field">
+            <span>Full name <i>*</i></span>
+            <input type="text" name="full_name" autocomplete="name" required placeholder="Your name" />
+          </label>
+
+          <div class="form__row">
+            <label class="field">
+              <span>Age <i>*</i></span>
+              <input type="number" name="age" min="13" max="120" required inputmode="numeric" placeholder="e.g. 28" />
+            </label>
+            <label class="field">
+              <span>Sex <i>*</i></span>
+              <select name="sex" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="nonbinary">Non-binary</option>
+                <option value="prefer_not_to_say">Prefer not to say</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Phone <small>(optional)</small></span>
+            <input type="tel" name="phone" autocomplete="tel" placeholder="(555) 123-4567" />
+          </label>
+
+          <div class="form__row">
+            <label class="field">
+              <span>Emergency contact <small>(recommended)</small></span>
+              <input type="text" name="emergency_contact_name" placeholder="Name" />
+            </label>
+            <label class="field">
+              <span>Emergency phone</span>
+              <input type="tel" name="emergency_contact_phone" placeholder="(555) 987-6543" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Outdoor experience</span>
+            <select name="experience_level">
+              <option value="first_timer">First-timer</option>
+              <option value="some">Some experience</option>
+              <option value="experienced">Comfortable / experienced</option>
+            </select>
+          </label>
+
+          <button type="submit" class="btn btn--accent btn--block" id="profileSubmit">Save &amp; continue <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p class="form__status" id="profileStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="pstate hidden" id="portalDashboard">
+      <div class="container">
+        <header class="dash__head">
+          <div>
+            <p class="kicker kicker--accent"><span class="section__no">✳</span> Member dashboard</p>
+            <h1 class="portal__title" id="dashGreeting">Welcome back</h1>
+          </div>
+          <div class="dash__profile" id="dashProfileCard">
+            <span class="dash__avatar" id="dashAvatar" aria-hidden="true">—</span>
+            <div>
+              <p class="dash__name" id="dashName">—</p>
+              <p class="dash__meta" id="dashMeta">—</p>
+              <button class="linkbtn" id="editProfileBtn" type="button">Edit profile</button>
+            </div>
+          </div>
+        </header>
+
+        <h2 class="dash__h2">Upcoming trips</h2>
+        <div class="events-list" id="eventsList" aria-live="polite">
+          <p class="muted" id="eventsLoading">Loading trips…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer--slim">
+    <div class="container footer__sub">
+      <p>© <span id="year">2026</span> LA Adventure Club</p>
+      <p><a class="footer__email" href="mailto:jarrr23d@gmail.com"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Questions? jarrr23d@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <!-- Supabase client (loaded before our app code) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="members.js"></script>
+</body>
+</html>

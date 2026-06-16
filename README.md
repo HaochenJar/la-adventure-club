@@ -5,11 +5,12 @@ Built as plain HTML/CSS/JS so it can be hosted **free on GitHub Pages** with no 
 
 **Design:** bold editorial / "exaggerated minimalism" — oversized Archivo display type, warm-paper & near-black high contrast with a single adventure-orange accent, JetBrains Mono "field-notes" labels (coordinates, dates, indices), and SVG icons (no emoji).
 
-It has the three sections you asked for:
+It has the three sections you asked for, plus a **member portal**:
 
 1. **Past Adventures** — highlight reels + photo galleries from each trip (Catalina, Dawn Mine hike, Naples Island)
-2. **Join a Trip** — upcoming events + a working registration form
+2. **Join a Trip** — upcoming events that lead into the member portal
 3. **About** — the club and the captain (you!)
+4. **Member portal** (`members.html`) — **Sign in with Google → short profile questionnaire (name / age / sex / emergency contact) → register for upcoming events**, backed by a real database (Supabase/Postgres). See **[SETUP-database.md](SETUP-database.md)** to switch it on.
 
 ---
 
@@ -17,9 +18,14 @@ It has the three sections you asked for:
 
 ```
 la-adventure-club/
-├── index.html          ← the whole site (one page, anchor-linked sections)
-├── styles.css          ← all styling
-├── script.js           ← nav, gallery lightbox, registration form
+├── index.html          ← landing page (one page, anchor-linked sections)
+├── members.html        ← member portal: Google sign-in + profile + event registration
+├── styles.css          ← all styling (landing + portal)
+├── script.js           ← landing-page nav, gallery lightbox, scroll reveal
+├── members.js          ← portal logic (Supabase auth, profile, registration)
+├── config.js           ← paste your Supabase URL + anon key here
+├── schema.sql          ← run this once in Supabase to create the database
+├── SETUP-database.md   ← step-by-step: Supabase + Google sign-in
 ├── README.md           ← this file
 ├── .nojekyll           ← tells GitHub Pages to serve files as-is
 └── assets/
@@ -53,22 +59,25 @@ Then enable Pages in **Settings → Pages** as in step 3 above.
 
 ---
 
-## ✉️ How the registration form works
+## ✉️ How registration works (member portal)
 
-The form posts to **[FormSubmit](https://formsubmit.co)** — a free service that emails you each
-registration. No backend, no signup, no API key.
+The landing-page "Register" buttons lead to **`members.html`**, the member portal:
 
-**One-time activation:** the *first* time anyone submits the form, FormSubmit sends a confirmation
-email to **jarrr23d@gmail.com** with an "Activate" link. Click it once and every future
-registration lands straight in your inbox.
+1. **Sign in with Google** (Supabase Auth — no passwords for you to manage).
+2. **First time only:** a short profile questionnaire — name, age, sex, phone, and
+   emergency contact — saved to the `profiles` table.
+3. **Register for events:** the portal lists upcoming trips from the `events` table
+   and lets each member book a spot (with guests), see how many spots are left, get
+   waitlisted automatically when a trip is full, and cancel.
 
-- To change the destination email, edit `REGISTRATION_EMAIL` near the top of `script.js`.
-- If the form service is ever unreachable, the form automatically falls back to opening the
-  visitor's email app with the details pre-filled — so you never miss a sign-up.
-- Prefer less spam exposure? Get a hashed endpoint at formsubmit.co and drop it into `script.js`.
+It's powered by **Supabase** (a free Postgres database + auth). Until you connect it
+(see **[SETUP-database.md](SETUP-database.md)**), the portal shows a friendly
+"setup needed" message — the rest of the site works regardless.
 
-Want something else instead? The form is a normal `<form>` — you can swap it for Google Forms,
-Netlify Forms, Tally, etc.
+**The database** (`schema.sql`) has three tables — `profiles`, `events`,
+`registrations` — with Row-Level Security so members only ever see their own data,
+plus helper functions that enforce event capacity. You manage events and view
+sign-ups from the Supabase dashboard.
 
 ---
 
@@ -78,11 +87,12 @@ Netlify Forms, Tally, etc.
 |---|---|
 | **Change the captain's name/bio** | Edit the `.captain__card` block in `index.html` (look for "Jared"). Change the `JC` initials in `.captain__avatar` too. |
 | **Add a real photo of yourself** | Drop a square photo in `assets/img/` and replace the `<div class="captain__avatar">JC</div>` with `<img src="assets/img/captain.jpg" alt="Captain">`. |
-| **Add / edit an upcoming trip** | Copy one `<article class="trip" …>` block in the *Upcoming Trips* section and change the date/title/details. The registration dropdown updates itself automatically from these cards. |
+| **Add / edit an upcoming trip** | Add a row to the `events` table in Supabase (it shows up in the portal automatically). Optionally mirror it as a static preview card on the landing page by copying an `<article class="trip" …>` block — keep its `members.html?event=<slug>` link matching the event's `slug`. |
 | **Add a new past adventure** | Copy an `<article class="event">` block, drop a new video in `assets/video/` and poster in `assets/img/`. |
 | **Change colors** | Edit the CSS variables at the top of `styles.css` (`--accent` = adventure orange, `--ink` = near-black, `--paper` = warm background, `--ocean` = secondary). |
 | **Change fonts** | Swap the Google Fonts `<link>` in `index.html` and the `--f-display` / `--f-body` / `--f-mono` vars in `styles.css`. |
-| **Change contact email** | Search `jarrr23d@gmail.com` in `index.html` (footer) and `script.js`. |
+| **Change contact email** | Search `jarrr23d@gmail.com` in `index.html` and `members.html` (footers). |
+| **Change the profile questions** | Edit the `#profileForm` fields in `members.html` and the matching columns in `schema.sql` (`profiles` table). |
 
 ---
 
