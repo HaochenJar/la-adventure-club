@@ -3,6 +3,8 @@
 A simple, fast, **static website** for the LA Adventure Club — outdoor adventures around Los Angeles.
 Built as plain HTML/CSS/JS so it can be hosted **free on GitHub Pages** with no build step and no server.
 
+**Design:** bold editorial / "exaggerated minimalism" — oversized Archivo display type, warm-paper & near-black high contrast with a single adventure-orange accent, JetBrains Mono "field-notes" labels (coordinates, dates, indices), and SVG icons (no emoji).
+
 It has the three sections you asked for:
 
 1. **Past Adventures** — highlight reels + photo galleries from each trip (Catalina, Dawn Mine hike, Naples Island)
@@ -78,7 +80,8 @@ Netlify Forms, Tally, etc.
 | **Add a real photo of yourself** | Drop a square photo in `assets/img/` and replace the `<div class="captain__avatar">JC</div>` with `<img src="assets/img/captain.jpg" alt="Captain">`. |
 | **Add / edit an upcoming trip** | Copy one `<article class="trip" …>` block in the *Upcoming Trips* section and change the date/title/details. The registration dropdown updates itself automatically from these cards. |
 | **Add a new past adventure** | Copy an `<article class="event">` block, drop a new video in `assets/video/` and poster in `assets/img/`. |
-| **Change colors** | Edit the CSS variables at the top of `styles.css` (`--teal`, `--coral`, `--navy`, …). |
+| **Change colors** | Edit the CSS variables at the top of `styles.css` (`--accent` = adventure orange, `--ink` = near-black, `--paper` = warm background, `--ocean` = secondary). |
+| **Change fonts** | Swap the Google Fonts `<link>` in `index.html` and the `--f-display` / `--f-body` / `--f-mono` vars in `styles.css`. |
 | **Change contact email** | Search `jarrr23d@gmail.com` in `index.html` (footer) and `script.js`. |
 
 ---
