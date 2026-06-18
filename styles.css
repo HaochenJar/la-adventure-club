@@ -369,6 +369,46 @@ body.members { padding-top: 70px; min-height: 100dvh; display: flex; flex-direct
 
 .footer--slim { padding: 28px 0; }
 
+/* ============================================================
+   EVENT PAGE (juneteenth.html)
+   ============================================================ */
+.hero__title--sm { font-size: clamp(2.8rem, 10vw, 7rem); }
+.hero__zh { font-family: var(--f-body); font-size: clamp(1rem, 2.2vw, 1.35rem); color: rgba(244,239,228,.9); margin: .6rem 0 0; }
+.hero__facts { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 28px; padding: 0; margin: 1.6rem 0 0; }
+.hero__facts li { display: inline-flex; align-items: center; gap: .5em; font-family: var(--f-mono); font-size: .82rem; color: rgba(244,239,228,.92); }
+.hero__facts svg { width: 1.1em; height: 1.1em; color: var(--accent); }
+.section__title--sm { font-size: clamp(2.2rem, 5.5vw, 4rem); }
+
+.intro-cols { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.intro-body p { font-size: 1.18rem; color: var(--ink-soft); }
+.zh { font-family: var(--f-body); color: var(--ink-soft); line-height: 1.9; }
+.section--dark .zh { color: var(--on-dark-soft); }
+
+.values--dark .value { border-top-color: var(--on-dark); }
+.values--dark .value h4 { color: var(--on-dark); }
+.values--dark .value p { color: var(--on-dark-soft); }
+
+.evt-cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.infolist { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; }
+.infolist li { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.infolist li:last-child { border-bottom: 0; padding-bottom: 0; }
+.infolist > li > svg { width: 28px; height: 28px; color: var(--accent); margin-top: 2px; }
+.infolist--notes > li > svg { color: var(--ocean); }
+.infolist__k { font-family: var(--f-mono); font-size: .66rem; text-transform: uppercase; letter-spacing: .12em; color: var(--ink-soft); margin: 0 0 .25em; }
+.infolist__v { font-family: var(--f-display); font-weight: 600; font-size: 1.1rem; margin: 0; }
+.infolist__sub { font-size: .92rem; color: var(--ink-soft); margin: .25em 0 0; }
+.evt-cta .portal__title { font-size: clamp(2.4rem, 7vw, 5rem); }
+
+@media (max-width: 760px) {
+  .intro-cols { grid-template-columns: 1fr; gap: 20px; }
+  .evt-cols { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* featured upcoming-trip card on the landing page */
+.trip--featured { position: relative; padding-left: 18px; }
+.trip--featured::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 4px; background: var(--accent); border-radius: 4px; }
+.trip--featured .trip__tag { color: var(--accent); }
+
 @media (max-width: 640px) {
   .ecard { grid-template-columns: auto 1fr; }
   .ecard__action { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; min-width: 0; }

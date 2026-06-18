@@ -56,7 +56,7 @@
     var months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
     return { day: String(parseInt(p[2], 10)), mon: months[parseInt(p[1], 10) - 1] || "" };
   }
-  var ACTIVITY_ICON = { hiking: "#i-mountain", paddle: "#i-waves" };
+  var ACTIVITY_ICON = { hiking: "#i-mountain", paddle: "#i-waves", walk: "#i-waves" };
 
   /* ---- sign in / out ---- */
   $("#googleSignIn").addEventListener("click", function () {

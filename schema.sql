@@ -232,6 +232,9 @@ grant execute on function public.cancel_registration(uuid)         to authentica
 -- ---------------------------------------------------------------------------
 insert into public.events (slug, title, activity, difficulty, description, location, event_date, start_time, capacity)
 values
+  ('juneteenth-point-vicente', 'Juneteenth Point Vicente Beach Walk', 'walk', 'Beginner',
+   'An easy sunset stroll along the Palos Verdes coast — clifftop ocean views, a Pacific sunset, sea breeze, and good company. Beginner-friendly, about 1 hour. Come solo or bring friends!',
+   'Point Vicente Lighthouse & Coastal Trail, Palos Verdes', date '2026-06-19', '6:00 PM', 30),
   ('solstice-canyon-hike', 'Solstice Canyon Sunset Hike', 'hiking', 'Easy',
    '3 mi loop past a waterfall and old ruins, finishing with ocean views at golden hour.',
    'Malibu', date '2026-06-27', '4:30 PM', 15),
