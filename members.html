@@ -103,12 +103,18 @@
 
           <div class="form__row">
             <label class="field">
-              <span>Age <i>*</i></span>
-              <input type="number" name="age" min="13" max="120" required inputmode="numeric" placeholder="e.g. 28" />
+              <span>Age range <i>*</i></span>
+              <select name="age_range" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="18-20">18–20</option>
+                <option value="21-25">21–25</option>
+                <option value="26-30">26–30</option>
+                <option value="30+">30+</option>
+              </select>
             </label>
             <label class="field">
-              <span>Sex <i>*</i></span>
-              <select name="sex" required>
+              <span>Gender <i>*</i></span>
+              <select name="gender" required>
                 <option value="" disabled selected>Select…</option>
                 <option value="female">Female</option>
                 <option value="male">Male</option>
@@ -141,6 +147,11 @@
               <option value="some">Some experience</option>
               <option value="experienced">Comfortable / experienced</option>
             </select>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" name="waiver" required />
+            <span>I'm joining voluntarily and at my own risk. Outdoor activities carry inherent risks — I'm responsible for my own health and safety, I have no undisclosed medical conditions that make participation unsafe, and I'll manage any medical needs during events. I release LA Adventure Club and its organizers from liability for any injury, illness, loss, or damage arising from my participation. <i>*</i></span>
           </label>
 
           <button type="submit" class="btn btn--accent btn--block" id="profileSubmit">Save &amp; continue <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>

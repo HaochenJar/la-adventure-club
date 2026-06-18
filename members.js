@@ -84,12 +84,13 @@
       id: currentUser.id,
       email: currentUser.email,
       full_name: (fd.get("full_name") || "").trim(),
-      age: parseInt(fd.get("age"), 10),
-      sex: fd.get("sex"),
+      age_range: fd.get("age_range"),
+      gender: fd.get("gender"),
       phone: (fd.get("phone") || "").trim() || null,
       emergency_contact_name: (fd.get("emergency_contact_name") || "").trim() || null,
       emergency_contact_phone: (fd.get("emergency_contact_phone") || "").trim() || null,
       experience_level: fd.get("experience_level"),
+      waiver_accepted: true,
       profile_complete: true
     };
 
@@ -106,12 +107,13 @@
       (currentUser.user_metadata && (currentUser.user_metadata.full_name || currentUser.user_metadata.name)) || "";
     if (name) profileForm.full_name.value = name;
     if (profile) {
-      if (profile.age) profileForm.age.value = profile.age;
-      if (profile.sex) profileForm.sex.value = profile.sex;
+      if (profile.age_range) profileForm.age_range.value = profile.age_range;
+      if (profile.gender) profileForm.gender.value = profile.gender;
       if (profile.phone) profileForm.phone.value = profile.phone;
       if (profile.emergency_contact_name) profileForm.emergency_contact_name.value = profile.emergency_contact_name;
       if (profile.emergency_contact_phone) profileForm.emergency_contact_phone.value = profile.emergency_contact_phone;
       if (profile.experience_level) profileForm.experience_level.value = profile.experience_level;
+      if (profile.waiver_accepted) profileForm.waiver.checked = true;
     }
   }
 
@@ -130,7 +132,7 @@
     $("#dashAvatar").textContent = initials(profile.full_name);
     $("#dashName").textContent = profile.full_name || currentUser.email;
     var bits = [];
-    if (profile.age) bits.push("Age " + profile.age);
+    if (profile.age_range) bits.push("Age " + profile.age_range);
     if (profile.experience_level) bits.push({ first_timer: "First-timer", some: "Some experience", experienced: "Experienced" }[profile.experience_level]);
     bits.push(currentUser.email);
     $("#dashMeta").textContent = bits.join(" · ");
