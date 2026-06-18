@@ -1,3 +1,11 @@
 .DS_Store
 **/.DS_Store
 Thumbs.db
+
+# secrets & exported member data — NEVER commit these
+.env
+tools/.env
+*.xlsx
+*-signups.csv
+__pycache__/
+**/__pycache__/
